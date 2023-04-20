@@ -1,0 +1,44 @@
+Git + Github
+
+[Git 설치]
+1. 저장소 파일 생성
+2. 저장소 파일 열기, 우클릭, Git Bash Here
+3. Git Bash 실행
+	$ git config --global user.name test				//test = repository 이름
+	$ git config --global user.email bkyun3328@naver.com		//내 github email
+4. Github repository의 Code 복사
+	$ git clone https://github.com/bkyun3012/test.git		//Git Bash에 ctrl+C, ctrl+V 안됨
+
+
+[Github Upload]
+1. 해당 저장소 파일 열기 (Git Bash에서 파일경로 잡아주기 위함)
+2. download한 source file 해당 저장소 파일로 옮기기(C:\Git_Desktop\test)
+2. 우클릭, Git Bash 실행
+	$ git add *	//* : 모든 파일 선택
+	$ git commit -m 	//upload되는 file에 대한 기록, 추가설명
+	$ git push	//최종 업로드 명령어
+cf) $ git commit --amend 	//commit 수정
+
+[구성도]
+Local(Git)	 <-> Remote(Github)
+(Local) Working Director
+	-> git add
+	<- git checkout, git merge
+(Local) Staging Area
+	-> git commit
+	<-
+(Local) Local repository
+	-> git push
+	<- git fetch
+(Remote) Remote repository
+
+[Error]
+error:failed to push some refs to 'https://github.com/bkyun3012/test'
+원인 : Git(local)에 없는 파일이 Github(remote)에 있는 경우에 push하면 발생
+해결 : Github로부터 pull하여 모든 file을 Git에 저장한 후 Github로 push
+	- pull
+	: $ git pull origin main	//origin(원격저장소 이름)은 $ git remote로 찾을 수 있다.
+	 
+
+
+
